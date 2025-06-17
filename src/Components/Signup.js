@@ -22,7 +22,7 @@ function Signup() {
     //         headers:myheader,
     //         body:dataINJSON
     //     }
-    //     let res = await fetch ("http://localhost:9998/postInData",reqOption);
+    //     let res = await fetch ("https://backend-vcdx.onrender.com/postInData",reqOption);
     //     let dataFromServer = await res.json();
     //     if (dataFromServer.status==="success") {
     //         alert(dataFromServer.msg)
@@ -47,7 +47,7 @@ function Signup() {
             body:data
         }
         try {
-            let res = await fetch("http://localhost:9998/multerStorage",reqOption);
+            let res = await fetch("https://backend-vcdx.onrender.com/multerStorage",reqOption);
             let resData = await res.json();
             console.log(resData);
             if (resData.status==="success") {
