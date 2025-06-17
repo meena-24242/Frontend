@@ -13,13 +13,13 @@ function Update() {
         method:"get"
       }
       try {
-        let res = await fetch(`http://localhost:9998/getParticularUserData/${userId}`, reqOption)
+        let res = await fetch(`https://backend-vcdx.onrender.com/getParticularUserData/${userId}`, reqOption)
         let jsoData = await res.json();
         console.log(jsoData)
         nameRef.current.value = jsoData.data.name;
         emailRef.current.value = jsoData.data.email;
         passwordRef.current.value = jsoData.data.password;
-        setProfilepic(`http://localhost:9998/${jsoData.data.profilePic}`)
+        setProfilepic(`https://backend-vcdx.onrender.com/${jsoData.data.profilePic}`)
       } catch (error) {
         console.log(error)
       }
@@ -42,7 +42,7 @@ function Update() {
           body:data
       }
       try {
-          let res = await fetch("http://localhost:9998/updateEmployee",reqOption);
+          let res = await fetch("https://backend-vcdx.onrender.com/updateEmployee",reqOption);
           let resData = await res.json();
           console.log(resData);
           if (resData.status==="success") {
