@@ -10,7 +10,7 @@ function Topnav() {
             method:"get"
           }
           try {
-            let res = await fetch(`http://localhost:9998/getParticularUserData/${userId}`, reqOption)
+            let res = await fetch(`https://backend-vcdx.onrender.com/getParticularUserData/${userId}`, reqOption)
             let jsoData = await res.json();
             setUserDetails(jsoData.data)
           } catch (error) {
@@ -27,7 +27,7 @@ function Topnav() {
             method:"delete"
           }
           try {
-            let res = await fetch(`http://localhost:9998/deleteUser/${userId}`,reqOption)
+            let res = await fetch(`https://backend-vcdx.onrender.com/deleteUser/${userId}`,reqOption)
             let resData = await res.json();
            if (resData.status==="success") {
             alert(resData.msg)
@@ -52,7 +52,7 @@ function Topnav() {
         }}>Update</h4>
         <h4 onClick={deletetheUser}>Delete</h4>
         <div style={{display:"flex",marginLeft:"670px"}}>
-        <img style={{width:"60px", borderRadius:"40px",height:"8vh"}} src={`http://localhost:9998/${userDetails.profilePic}`}></img>
+        <img style={{width:"60px", borderRadius:"40px",height:"8vh"}} src={`https://backend-vcdx.onrender.com/${userDetails.profilePic}`}></img>
          <p>Welcome:{userDetails.name}</p>
         <h4 onClick={()=>{
           navigate("/")
